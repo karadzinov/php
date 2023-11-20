@@ -42,7 +42,6 @@ if(!empty($_POST['address2']) && isset($_POST['address2'])) {
     $address2 = $_POST['address2'];
 }  else {
     $errors["address2"] = "This filed is required!";
-
 }
 
 
