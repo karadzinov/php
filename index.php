@@ -1,6 +1,7 @@
 <?php
 require_once "./partials/header.php";
 
+
 if(!empty($_GET['first_name']) && isset($_GET['first_name'])) {
     $first_name = $_GET['first_name'];
 } else {

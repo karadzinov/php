@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +29,18 @@
                 <a class="nav-link" href="/contact.php">Contact</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <div class="my-2 my-lg-0">
+            <?php
+           if(isset($_SESSION['user'])) {
+                echo "Welcome " . $_SESSION['user'][1]. ' ';
+                echo  '<a class="btn btn-info" href="/logout.php">Logout</a>';
+           } else {
+               echo '<a class="btn btn-info" href="/login.php">Login</a>';
+           }
+           ?>
+
+
+
         </form>
     </div>
 </nav>

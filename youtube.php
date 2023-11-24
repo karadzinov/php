@@ -3,6 +3,13 @@
 require_once "./partials/header.php";
 
 
+$data = "2023-04-12 Friday";
+
+$data1 = explode(" ", $data);
+echo $data1[1];
+
+die();
+
 
 $myfile = fopen("youtube-links.txt", "r") or die("Unable to open file!");
 $youtubeInfo = fread($myfile,filesize("youtube-links.txt"));
