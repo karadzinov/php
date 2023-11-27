@@ -2,7 +2,6 @@
 
 require_once "./partials/header.php";
 
-
 ?>
 
 <div class="container">
@@ -18,8 +17,8 @@ require_once "./partials/header.php";
                             <input type="text" class="form-control " id="name" aria-describedby="textHelp" name="name"
                                    value="" autocomplete="name" autofocus="">
                             <?php
-                            if (isset($_GET['name'])) {
-                                echo '<div class="text-danger">' . $_GET['name'] . '</div>';
+                            if (isset($_SESSION['errors']['name'])) {
+                                echo '<div class="text-danger">' . $_SESSION['errors']['name'] . '</div>';
                             }
                             ?>
                         </div>
@@ -28,8 +27,8 @@ require_once "./partials/header.php";
                             <input id="email" type="email" class="form-control " name="email" value=""
                                    autocomplete="email" aria-describedby="emailHelp">
                             <?php
-                            if (isset($_GET['email'])) {
-                                echo '<div class="text-danger">' . $_GET['email'] . '</div>';
+                            if (isset($_SESSION['errors']['email'])) {
+                                echo '<div class="text-danger">' . $_SESSION['errors']['email'] . '</div>';
                             }
                             ?>
                         </div>
@@ -38,8 +37,8 @@ require_once "./partials/header.php";
                             <input id="password" type="password" class="form-control " name="password"
                                    autocomplete="new-password">
                             <?php
-                            if (isset($_GET['password'])) {
-                                echo '<div class="text-danger">' . $_GET['password'] . '</div>';
+                            if (isset($_SESSION['errors']['password'])) {
+                                echo '<div class="text-danger">' . $_SESSION['errors']['password'] . '</div>';
                             }
                             ?>
                         </div>
@@ -48,8 +47,8 @@ require_once "./partials/header.php";
                             <input id="password-confirm" type="password" class="form-control"
                                    name="password_confirmation" required="" autocomplete="new-password">
                             <?php
-                            if (isset($_GET['password_confirmation'])) {
-                                echo '<div class="text-danger">' . $_GET['password_confirmation'] . '</div>';
+                            if (isset($_SESSION['errors']['password_confirmation'])) {
+                                echo '<div class="text-danger">' . $_SESSION['errors']['password_confirmation'] . '</div>';
                             }
                             ?>
                         </div>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 // errors array
 $errors = [];
@@ -42,9 +42,10 @@ if (empty($errors)) {
     $data = $email . chr(9) . $name . chr(9) . $password . chr(9) . $password_confirmation . chr(10);
     fwrite($myFile, $data);
     fclose($myFile);
+
     header('Location: login.php');
 
 } else {
-    $php_errormsg = http_build_query($errors, '&amp;');
-    header('Location: register.php?' . $php_errormsg);
+    $_SESSION['errors'] = $errors;
+    header('Location: register.php');
 }
